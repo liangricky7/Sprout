@@ -6,24 +6,31 @@ public class ShelfButtons : MonoBehaviour
 {
     public float zoom;
     private float originalZoom;
-    private float targetZoom = 2f;
-    private float zoomMultiplier = 100f;
-    private float velocity = 0f;
+    private float targetZoom = 1f;
+    private float zoomMultiplier = 3000f;
+    private float velocity = 5f;
     private float smoothTime = 0.25f;
 
     private Camera cam;
-        
+
     private void Start()
-    {
+    { 
         cam = Camera.main;
         zoom = cam.orthographicSize;
         originalZoom = cam.orthographicSize;
     }
     public void ZoomIn()
     {
-        zoom -= zoomMultiplier;
-        zoom = Mathf.Clamp(zoom, targetZoom, originalZoom);
-        cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, zoom, ref velocity, smoothTime);
+        StartCoroutine(ZoomInEnum());
+    }
+
+    IEnumerator ZoomInEnum()
+    {
+        while (zoom > targetZoom)
+        {
+            cam.orthographicSize = Mathf.Lerp(originalZoom, targetZoom, 1f);
+            yield return null;
+        }
     }
 
     public void ZoomOut()
