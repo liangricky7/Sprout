@@ -6,8 +6,12 @@ public class Slot : MonoBehaviour
 {
     public Plant plant;
 
-    //public void AddNewPlant()
-    //{
-    //    Instantiate();
-    //}
+    private void Start()
+    {
+        plant = GetComponentInChildren<Plant>();
+    }
+    public void AddNewPlant()
+    {
+        plant = GetComponentInChildren<Plant>();
+    }
 }
