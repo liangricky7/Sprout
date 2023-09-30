@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shelf : MonoBehaviour
+public class CameraZoom : MonoBehaviour
 {
-    public Slot[] slots;
     // Start is called before the first frame update
     void Start()
     {
-        slots = GetComponentsInChildren<Slot>();
-
+        
     }
 
     // Update is called once per frame

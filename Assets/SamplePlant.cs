@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class SamplePlant : Plant
 {
-    // Start is called before the first frame update
+    SpriteRenderer render;
+    private void Awake()
+    {
+
+    }
     void Start()
     {
         
