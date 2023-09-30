@@ -18,6 +18,7 @@ public class ShelfButtons : MonoBehaviour
     private Coroutine coroutine;
 
     [SerializeField] private Transform slotTransform;
+    [SerializeField] private Plant plant;
     private void Start()
     {
         cam = Camera.main;
@@ -29,6 +30,7 @@ public class ShelfButtons : MonoBehaviour
     {
         targetPosition = new Vector3(slotTransform.position.x, slotTransform.position.y, -10);
         StartCoroutine(ZoomInEnum());
+        
     }
 
     IEnumerator ZoomInEnum()
