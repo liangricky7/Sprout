@@ -44,3 +44,6 @@ TagManager:
   - name: Slot
     uniqueID: 3518100501
     locked: 0
+  - name: Plant
+    uniqueID: 2870331711
+    locked: 0

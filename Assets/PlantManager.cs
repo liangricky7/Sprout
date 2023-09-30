@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlantManager : MonoBehaviour
 {
+    public Plant[] plants;
+    public Plant selectedPlant;
+
     public static PlantManager instance;
 
     private void Awake()

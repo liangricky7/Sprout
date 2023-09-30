@@ -18,7 +18,8 @@ public class ShelfButtons : MonoBehaviour
     private Coroutine coroutine;
 
     [SerializeField] private Transform slotTransform;
-    [SerializeField] private Plant plant;
+    [SerializeField] private Slot slot;
+
     private void Start()
     {
         cam = Camera.main;
@@ -30,7 +31,7 @@ public class ShelfButtons : MonoBehaviour
     {
         targetPosition = new Vector3(slotTransform.position.x, slotTransform.position.y, -10);
         StartCoroutine(ZoomInEnum());
-        
+        CanvasManager.instance.ZoomedActivate();
     }
 
     IEnumerator ZoomInEnum()
@@ -48,6 +49,7 @@ public class ShelfButtons : MonoBehaviour
     public void ZoomOut()
     {
         StartCoroutine(ZoomOutEnum());
+        CanvasManager.instance.ShelfActivate();
     }
 
     IEnumerator ZoomOutEnum()

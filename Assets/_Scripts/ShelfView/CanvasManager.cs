@@ -5,8 +5,7 @@ using UnityEngine;
 public class CanvasManager : MonoBehaviour
 {
     [SerializeField] private Canvas ShelfCanvas;
-    [SerializeField] private Canvas UngrownCanvas;
-    [SerializeField] private Canvas GrownCanvas;
+    [SerializeField] private Canvas ZoomedCanvas;
 
     public static CanvasManager instance;
 
@@ -31,21 +30,12 @@ public class CanvasManager : MonoBehaviour
     public void ShelfActivate()
     {
         ShelfCanvas.enabled = true;
-        UngrownCanvas.enabled = false;
-        GrownCanvas.enabled = false;
+        ZoomedCanvas.enabled = false;
     }
 
-    public void UngrownActivate()
+    public void ZoomedActivate()
     {
         ShelfCanvas.enabled = false;
-        UngrownCanvas.enabled = true;
-        GrownCanvas.enabled = false;
-    }
-
-    public void GrownActivate()
-    {
-        ShelfCanvas.enabled = false;
-        UngrownCanvas.enabled = false;
-        GrownCanvas.enabled = true;
+        ZoomedCanvas.enabled = true;
     }
 }
