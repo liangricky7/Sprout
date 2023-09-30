@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8635051749482863518
+--- !u!1 &1990481219899546291
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2751736940886264870}
-  - component: {fileID: 4988555930714590306}
-  - component: {fileID: 4914531550398577622}
+  - component: {fileID: 1990481219899546290}
+  - component: {fileID: 1990481219899546288}
+  - component: {fileID: 1990481219899546289}
   m_Layer: 0
-  m_Name: Slot
+  m_Name: CactusPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2751736940886264870
+--- !u!4 &1990481219899546290
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8635051749482863518}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21106, y: 0.42991, z: 0}
-  m_LocalScale: {x: 0.30137807, y: 0.28462863, z: 1}
+  m_GameObject: {fileID: 1990481219899546291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.006, y: -1.576, z: 0}
+  m_LocalScale: {x: 0.17370011, y: 0.14259033, z: 0.2954671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4988555930714590306
+--- !u!212 &1990481219899546288
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8635051749482863518}
+  m_GameObject: {fileID: 1990481219899546291}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,30 +71,38 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -776866795
-  m_SortingLayer: 1
+  m_SortingLayerID: -1424635585
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  m_Sprite: {fileID: 21300000, guid: 0cb10f9d27dc34a37a49b1a3c605495b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.4, y: 1.4}
+  m_Size: {x: 8, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4914531550398577622
+--- !u!114 &1990481219899546289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8635051749482863518}
+  m_GameObject: {fileID: 1990481219899546291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44cba63c5a87346cd958afa2a03185bc, type: 3}
+  m_Script: {fileID: 11500000, guid: be646dcb9953c441680a7add399ca443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 0}
+  name: Cactus
+  stepCount: 0
+  stepsNeeded: 10000
+  growthStage: 0
+  questList: []
+  sprites:
+  - {fileID: 21300000, guid: 0cb10f9d27dc34a37a49b1a3c605495b, type: 3}
+  - {fileID: 21300000, guid: 948a9f61297f949aaad61bf1bde9f7c3, type: 3}
+  - {fileID: 21300000, guid: 9abb78ddb16f3423bbc063e17217e214, type: 3}
