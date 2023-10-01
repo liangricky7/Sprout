@@ -9,12 +9,6 @@ public class Shelf : MonoBehaviour
     void Start()
     {
         slots = GetComponentsInChildren<Slot>();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ShelfManager.instance.slots = this.slots;
     }
 }

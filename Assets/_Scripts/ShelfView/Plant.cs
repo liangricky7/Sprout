@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Plant : MonoBehaviour
 {
-    public string name;
+    public new string name;
     public int stepCount;
     public int stepsNeeded;
     public int growthStage; //0 for infant, 1 for juvenile, 2 for grown

@@ -7,18 +7,15 @@ public class ShelfButtons : MonoBehaviour
     public float zoom;
     private float originalZoom;
     private float targetZoom = 2f;
-    private float zoomMultiplier = 3000f;
     private float transitionDuration = 0.5f;
-    private float velocity = 5f;
 
     private Vector3 originalPosition;
     private Vector3 targetPosition;
 
     private Camera cam;
-    private Coroutine coroutine;
 
     [SerializeField] private Transform slotTransform;
-    [SerializeField] private Slot slot;
+    [SerializeField] private Slot slot; //assigned only for the shelf buttons 
 
     private void Start()
     {
@@ -27,11 +24,12 @@ public class ShelfButtons : MonoBehaviour
         originalZoom = cam.orthographicSize;
         originalPosition = new Vector3(0, 0, -10);
     }
-    public void ZoomIn()
+
+    public void ZoomIn() //attached to shelf canvas
     {
         targetPosition = new Vector3(slotTransform.position.x, slotTransform.position.y, -10);
+        ShelfManager.instance.currentSlot = slot.index;
         StartCoroutine(ZoomInEnum());
-        CanvasManager.instance.ZoomedActivate();
     }
 
     IEnumerator ZoomInEnum()
@@ -44,10 +42,12 @@ public class ShelfButtons : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+        CanvasManager.instance.ZoomedActivate();
     }
 
     public void ZoomOut()
     {
+        ShelfManager.instance.currentSlot = -1;
         StartCoroutine(ZoomOutEnum());
         CanvasManager.instance.ShelfActivate();
     }
@@ -63,5 +63,4 @@ public class ShelfButtons : MonoBehaviour
             yield return null;
         }
     }
-
 }
