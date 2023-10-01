@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class ChangeScene : MonoBehaviour
+public class ChangeSceneCustom : MonoBehaviour
 {
     public void MovetoScene(int sceneID)
     {
