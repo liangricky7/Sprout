@@ -27,9 +27,12 @@ public class SlotButtons : MonoBehaviour
 
     public void ZoomIn() //attached to shelf canvas
     {
-        targetPosition = new Vector3(slotTransform.position.x, slotTransform.position.y, -10);
-        ShelfManager.instance.currentSlot = slot.index;
-        StartCoroutine(ZoomInEnum());
+        if (!PlantManager.instance.inPlantMode)
+        {
+            targetPosition = new Vector3(slotTransform.position.x, slotTransform.position.y, -10);
+            ShelfManager.instance.currentSlot = slot.index;
+            StartCoroutine(ZoomInEnum());
+        }
     }
 
     IEnumerator ZoomInEnum()
@@ -65,8 +68,11 @@ public class SlotButtons : MonoBehaviour
 
     public void ZoomOut()
     {
-        StartCoroutine(ZoomOutEnum());
-        CanvasManager.instance.ShelfActivate();
+        if (!PlantManager.instance.inPlantMode)
+        {
+            StartCoroutine(ZoomOutEnum());
+            CanvasManager.instance.ShelfActivate();
+        }
     }
 
     IEnumerator ZoomOutEnum()
@@ -86,6 +92,15 @@ public class SlotButtons : MonoBehaviour
 
     public void AddPlant()
     {
-
+        Debug.Log("test");
+        if (PlantManager.instance.inPlantMode)
+        {
+            GameObject plant = Instantiate(PlantManager.instance.stagedPlantPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            plant.transform.parent = slot.transform;
+            plant.transform.position = slot.transform.position;
+            plant.transform.localScale = new Vector3(0.1737001f, 0.1487517f, 0f);
+            slot.AddNewPlant();
+            PlantManager.instance.inPlantMode = false;
+        }
     }
 }

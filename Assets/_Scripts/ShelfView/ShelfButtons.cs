@@ -6,6 +6,6 @@ public class ShelfButtons : MonoBehaviour
 {
     public void AddPlant()
     {
-
+        PlantManager.instance.EnterPlantMode();
     }
 }

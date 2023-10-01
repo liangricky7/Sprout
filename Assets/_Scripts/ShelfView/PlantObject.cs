@@ -5,13 +5,10 @@ using UnityEngine;
 public class PlantObject : Plant
 {
     SpriteRenderer render;
+
     private void Awake()
     {
         render = GetComponent<SpriteRenderer>();
-    }
-    void Start()
-    {
-
     }
 
     void Update()

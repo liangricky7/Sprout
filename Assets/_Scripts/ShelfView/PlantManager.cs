@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlantManager : MonoBehaviour
 {
-    public Plant[] plants;
+    public GameObject[] plantPrefabs;
     public Plant selectedPlant;
+    public GameObject stagedPlantPrefab;
+    public bool inPlantMode;
 
     public static PlantManager instance;
 
@@ -21,5 +23,15 @@ public class PlantManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
+        inPlantMode = false;
+    }
+
+    public void EnterPlantMode()
+    {
+        inPlantMode = true;
+    }
+    public void ExitPlantMode()
+    {
+        inPlantMode = false;
     }
 }
