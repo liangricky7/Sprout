@@ -20,7 +20,6 @@ public class CanvasManager : MonoBehaviour
         {
             Destroy(this);
         }
-
         DontDestroyOnLoad(this);
     }
 
@@ -28,6 +27,32 @@ public class CanvasManager : MonoBehaviour
     {
         ShelfActivate();
     }
+
+    //private void Update()
+    //{
+    //    GameObject[] CanvasObjects = GameObject.FindGameObjectsWithTag("Canvas");
+    //    GameObject ShelfC, ZoomC, UngrownC, PlantPanel;
+
+    //    foreach (var i in CanvasObjects)
+    //    {
+    //        if ((i.name).Equals("ShelfCanvas")) {
+    //            ShelfCanvas = i.GetComponent<Canvas>();
+    //        }
+    //        if ((i.name).Equals("ShelfCanvas"))
+    //        {
+    //            ShelfCanvas = i.GetComponent<Canvas>();
+    //        }
+    //        if ((i.name).Equals("ShelfCanvas"))
+    //        {
+    //            UngrownCanvas = i.GetComponent<Canvas>();
+    //        }
+    //        if ((i.name).Equals("ShelfCanva"))
+    //        {
+    //            AddPlantPanel = i;
+    //        }
+    //    }
+
+    //}
 
     public void ShelfActivate()
     {

@@ -10,4 +10,5 @@ public abstract class Plant : MonoBehaviour
     public int growthStage; //0 for infant, 1 for juvenile, 2 for grown
     public Quest[] questList;
     public Sprite[] sprites;
+    public Sprite title;
 }

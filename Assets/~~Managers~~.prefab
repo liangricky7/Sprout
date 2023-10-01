@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8043780293402775459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8043780293402775457}
+  - component: {fileID: 8043780293402775456}
+  - component: {fileID: 8043780293402775519}
+  - component: {fileID: 8043780293402775518}
+  m_Layer: 0
+  m_Name: ~~Managers~~
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8043780293402775457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043780293402775459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8043780293402775456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043780293402775459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae6ab356a31b404d9bd08db7da5354c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShelfCanvas: {fileID: 0}
+  ZoomedCanvas: {fileID: 0}
+  UngrownCanvas: {fileID: 0}
+  AddPlantPanel: {fileID: 0}
+--- !u!114 &8043780293402775519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043780293402775459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3297cdfdb80e54df7ab125b96b808230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantPrefabs:
+  - {fileID: 1990481219899546291, guid: d7ea0cd78ae294731a64525018958553, type: 3}
+  - {fileID: 4607029168628101126, guid: 63ef965191632458db2e752ca81a0c69, type: 3}
+  - {fileID: 5321725225276692293, guid: 8f6372196a65247489c2e8f9b369fe5c, type: 3}
+  - {fileID: 6718878617733619079, guid: 52d9c80cb26a84ccfa169284d4c2c61f, type: 3}
+  - {fileID: 3948515915982977689, guid: 1c700b377ad844b7884e85ce2abbca91, type: 3}
+  - {fileID: 6399581095308994391, guid: af479ed15fed943ac82ae75de43f901e, type: 3}
+  seedPackets:
+  - {fileID: 21300000, guid: df33eebe5e8f34d9f9eebb00f51c5d16, type: 3}
+  - {fileID: 21300000, guid: fcd8ed6aad2c1419c8d3352f8edf1318, type: 3}
+  - {fileID: 21300000, guid: 90104b751a0cc42fba91aa3da5074360, type: 3}
+  - {fileID: 21300000, guid: 952e749155e544a3d9ed33e76ff06634, type: 3}
+  - {fileID: 21300000, guid: 8e3734e4b28a74f2ca4c82e521889681, type: 3}
+  - {fileID: 21300000, guid: 6595bd6ba026745ec8c6769731dd2d68, type: 3}
+  titles:
+  - {fileID: 21300000, guid: e2d7ea54df39141bf926f52abd85b37a, type: 3}
+  - {fileID: 21300000, guid: eeb8b4d31ee9f45d88811d3072fc8c41, type: 3}
+  - {fileID: 21300000, guid: 433d5add021084960a2a9f32332fc325, type: 3}
+  - {fileID: 21300000, guid: 9a7e1c2f433b546c1866347308972825, type: 3}
+  - {fileID: 21300000, guid: ec8cafa466cc147acb8aac553a01cd1e, type: 3}
+  - {fileID: 21300000, guid: 1f855da5cdbe24e33b0c17f8bcdd39a6, type: 3}
+  selectedPlant: {fileID: 0}
+  stagedPlantPrefab: {fileID: 6718878617733619079, guid: 52d9c80cb26a84ccfa169284d4c2c61f, type: 3}
+  inPlantMode: 0
+--- !u!114 &8043780293402775518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043780293402775459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95525ab2f17aa4d028fdbcbab55326c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots: []
+  currentSlot: 0

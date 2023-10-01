@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Sprout_Logger2.unity
     guid: 15d4235fd2ecca5449b4742917a5d1ea
   - enabled: 1
@@ -27,14 +24,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Breakfast Food Information.unity
     guid: 3b57cd7c9060a4512b637e5644177861
   - enabled: 1
-    path: Assets/Scenes/Snacks Food Information.unity
-    guid: 7cc8bc947cbbf4f8b96069ef45cdbf87
-  - enabled: 1
     path: Assets/Scenes/Lunch Food Information.unity
     guid: 97fb78935face409bb178d91019772a7
   - enabled: 1
     path: Assets/Scenes/Dinner Food Information.unity
     guid: aa51e89ec510548e299379827046e8f1
+  - enabled: 1
+    path: Assets/Scenes/Snacks Food Information.unity
+    guid: 7cc8bc947cbbf4f8b96069ef45cdbf87
   - enabled: 1
     path: Assets/Scenes/Cardio Activity.unity
     guid: da1767c1b43354006b78edcff1fa2d98
@@ -47,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Other Activy.unity
     guid: 79c268fec1baf4df48469c26d3511208
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

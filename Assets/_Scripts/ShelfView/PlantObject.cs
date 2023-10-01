@@ -19,6 +19,9 @@ public class PlantObject : Plant
         } else if (stepCount >= (stepsNeeded / 2))
         {
             growthStage = 1;
+        } else if (stepCount == 0)
+        {
+            growthStage = 0;
         }
         render.sprite = sprites[growthStage];
 

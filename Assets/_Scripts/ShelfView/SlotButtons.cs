@@ -6,7 +6,7 @@ public class SlotButtons : MonoBehaviour
 {
     public float zoom;
     private float originalZoom;
-    private float targetZoom = 2f;
+    private float targetZoom = 2.8f;
     private float transitionDuration = 0.5f;
 
     private Vector3 originalPosition;
@@ -71,7 +71,7 @@ public class SlotButtons : MonoBehaviour
             yield return null;
         }
         CanvasManager.instance.ZoomedActivate();
-
+        ShelfManager.instance.currentSlot = slot.index;
     }
 
     public void ZoomOut()
