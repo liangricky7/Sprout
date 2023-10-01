@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cactus: Plant
+public class PlantObject : Plant
 {
     SpriteRenderer render;
     private void Awake()

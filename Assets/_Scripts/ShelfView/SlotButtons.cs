@@ -16,7 +16,7 @@ public class SlotButtons : MonoBehaviour
 
     [SerializeField] private Transform slotTransform;
     [SerializeField] private Slot slot; //assigned only for the shelf buttons 
-
+    private Slot[] slots;
     private void Start()
     {
         cam = Camera.main;
@@ -34,6 +34,24 @@ public class SlotButtons : MonoBehaviour
 
     IEnumerator ZoomInEnum()
     {
+        slots = ShelfManager.instance.slots;
+
+        if (slots[slot.index].plant != null) //null check
+        {
+            if (slots[slot.index].plant.growthStage == 2) //if the plant in slot is fully grown, display without questlist
+            {
+                targetPosition = slots[slot.index].transform.position;
+            }
+            else //otherwise, move camera target to give space to show questlist
+            {
+                targetPosition = slots[slot.index].transform.position - new Vector3(0, 1, 0);
+            }
+        }
+        else //if there is no plant in slot, display without questlist
+        {
+            targetPosition = slots[slot.index].transform.position;
+        }
+
         float timeElapsed = 0;
         while (timeElapsed < transitionDuration)
         {
@@ -64,5 +82,10 @@ public class SlotButtons : MonoBehaviour
             yield return null;
         }
         ShelfManager.instance.currentSlot = -1;
+    }
+
+    public void AddPlant()
+    {
+
     }
 }

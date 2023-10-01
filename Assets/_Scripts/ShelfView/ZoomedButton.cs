@@ -59,8 +59,28 @@ public class ZoomedButton : MonoBehaviour
         if (ShelfManager.instance.currentSlot - 1 >= 0)
         {
             currentSlotIndex = ShelfManager.instance.currentSlot;
-            originalPosition = slots[currentSlotIndex].transform.position;
 
+
+            //sets original position
+            if (slots[currentSlotIndex].plant != null) //null check
+            {
+                if (slots[currentSlotIndex].plant.growthStage == 2) //if the plant in slot is fully grown, display without questlist
+                {
+                    originalPosition = slots[currentSlotIndex].transform.position;
+                }
+                else //otherwise, move camera target to give space to show questlist
+                {
+                    originalPosition = slots[currentSlotIndex].transform.position - new Vector3(0, 1, 0);
+                }
+            }
+            else //if there is no plant in slot, display without questlist
+            {
+                originalPosition = slots[currentSlotIndex].transform.position;
+            }
+            //originalPosition = slots[currentSlotIndex].transform.position;
+
+
+            //sets target position
             if (slots[currentSlotIndex - 1].plant != null) //null check
             {
                 if (slots[currentSlotIndex - 1].plant.growthStage == 2) //if the plant in slot is fully grown, display without questlist
@@ -77,6 +97,8 @@ public class ZoomedButton : MonoBehaviour
                 targetPosition = slots[currentSlotIndex - 1].transform.position;
             }
 
+
+
             //switch slots
             StartCoroutine(Scroll());
 
@@ -92,9 +114,28 @@ public class ZoomedButton : MonoBehaviour
         if (ShelfManager.instance.currentSlot + 1 <= 5)
         {
             currentSlotIndex = ShelfManager.instance.currentSlot;
-            originalPosition = slots[currentSlotIndex].transform.position;
 
 
+            //sets original position
+            if (slots[currentSlotIndex].plant != null) //null check
+            {
+                if (slots[currentSlotIndex].plant.growthStage == 2) //if the plant in slot is fully grown, display without questlist
+                {
+                    originalPosition = slots[currentSlotIndex].transform.position;
+                }
+                else //otherwise, move camera target to give space to show questlist
+                {
+                    originalPosition = slots[currentSlotIndex].transform.position - new Vector3(0, 1, 0);
+                }
+            }
+            else //if there is no plant in slot, display without questlist
+            {
+                originalPosition = slots[currentSlotIndex].transform.position;
+            }
+            //originalPosition = slots[currentSlotIndex].transform.position;
+
+
+            //sets target position
             if (slots[currentSlotIndex + 1].plant != null) //null check
             {
                 if (slots[currentSlotIndex + 1].plant.growthStage == 2) //if the plant in slot is fully grown, display without questlist
