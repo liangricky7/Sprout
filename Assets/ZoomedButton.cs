@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZoomedButton : MonoBehaviour
 {
     private Camera cam;
+    private Image image;
 
-    private Slot[] slots;
+    [SerializeField]
+    private bool LeftButton; //determines if this script is attached to the left arrow button or right
+
     [SerializeField]
     private int currentSlotIndex;
+    private Slot[] slots;
 
     private Vector3 originalPosition;
     private Vector3 targetPosition;
@@ -18,21 +23,63 @@ public class ZoomedButton : MonoBehaviour
 
     private void Start()
     {
+        image = GetComponent<Image>();
         cam = Camera.main;
         //Debug.Log(ShelfManager.instance.slots.Length);
+    }
+
+    private void Update()
+    {
+        if (LeftButton)
+        {
+            if (ShelfManager.instance.currentSlot == 0)
+            {
+                image.enabled = false;
+            } else
+            {
+                image.enabled = true;
+            }
+        } else
+        {
+            if (ShelfManager.instance.currentSlot == 5)
+            {
+                image.enabled = false;
+            }
+            else
+            {
+                image.enabled = true;
+            }
+        }
     }
 
     public void LeftArrow()
     {
         this.slots = ShelfManager.instance.slots; //cant call it in start due to async so this is next best
-        Debug.Log("attempted");
 
         if (ShelfManager.instance.currentSlot - 1 >= 0)
         {
             currentSlotIndex = ShelfManager.instance.currentSlot;
             originalPosition = slots[currentSlotIndex].transform.position;
-            targetPosition = slots[currentSlotIndex - 1].transform.position;
+
+            if (slots[currentSlotIndex - 1].plant != null) //null check
+            {
+                if (slots[currentSlotIndex - 1].plant.growthStage == 2) //if the plant in slot is fully grown, display without questlist
+                {
+                    targetPosition = slots[currentSlotIndex - 1].transform.position;
+                }
+                else //otherwise, move camera target to give space to show questlist
+                {
+                    targetPosition = slots[currentSlotIndex - 1].transform.position - new Vector3(0, 1, 0);
+                }
+            }
+            else //if there is no plant in slot, display without questlist
+            {
+                targetPosition = slots[currentSlotIndex - 1].transform.position;
+            }
+
+            //switch slots
             StartCoroutine(Scroll());
+
             currentSlotIndex -= 1;
             ShelfManager.instance.currentSlot = currentSlotIndex;
         }
@@ -42,15 +89,33 @@ public class ZoomedButton : MonoBehaviour
     {
         this.slots = ShelfManager.instance.slots; //cant call it in start due to async so this is next best
 
-        currentSlotIndex = ShelfManager.instance.currentSlot;
-        if (currentSlotIndex + 1 <= 5)
+        if (ShelfManager.instance.currentSlot + 1 <= 5)
         {
+            currentSlotIndex = ShelfManager.instance.currentSlot;
             originalPosition = slots[currentSlotIndex].transform.position;
-            targetPosition = slots[currentSlotIndex + 1].transform.position;
+
+
+            if (slots[currentSlotIndex + 1].plant != null) //null check
+            {
+                if (slots[currentSlotIndex + 1].plant.growthStage == 2) //if the plant in slot is fully grown, display without questlist
+                {
+                    targetPosition = slots[currentSlotIndex + 1].transform.position;
+                }
+                else //otherwise, move camera target to give space to show questlist
+                {
+                    targetPosition = slots[currentSlotIndex + 1].transform.position - new Vector3(0, 1, 0);
+                }
+            }
+            else //if there is no plant in slot, display without questlist
+            {
+                targetPosition = slots[currentSlotIndex + 1].transform.position;
+            }
+
+            //switch slots
             StartCoroutine(Scroll());
+
             currentSlotIndex += 1;
             ShelfManager.instance.currentSlot = currentSlotIndex;
-
         }
     }
 

@@ -6,6 +6,7 @@ public class CanvasManager : MonoBehaviour
 {
     [SerializeField] private Canvas ShelfCanvas;
     [SerializeField] private Canvas ZoomedCanvas;
+    [SerializeField] private Canvas UngrownCanvas;
 
     public static CanvasManager instance;
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShelfButtons : MonoBehaviour
+public class SlotButtons : MonoBehaviour
 {
     public float zoom;
     private float originalZoom;
@@ -47,20 +47,22 @@ public class ShelfButtons : MonoBehaviour
 
     public void ZoomOut()
     {
-        ShelfManager.instance.currentSlot = -1;
         StartCoroutine(ZoomOutEnum());
         CanvasManager.instance.ShelfActivate();
     }
 
     IEnumerator ZoomOutEnum()
     {
+        targetPosition = ShelfManager.instance.slots[ShelfManager.instance.currentSlot].transform.position;
+
         float timeElapsed = 0;
         while (timeElapsed < transitionDuration)
         {
-            cam.transform.position = new Vector3(Mathf.Lerp(targetPosition.x, originalPosition.x, timeElapsed / transitionDuration), Mathf.Lerp(originalPosition.y, targetPosition.y, timeElapsed / transitionDuration), -10);
+            cam.transform.position = new Vector3(Mathf.Lerp(targetPosition.x, originalPosition.x, timeElapsed / transitionDuration), Mathf.Lerp(targetPosition.y, originalPosition.y, timeElapsed / transitionDuration), -10);
             cam.orthographicSize = Mathf.Lerp(targetZoom, originalZoom, timeElapsed / transitionDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+        ShelfManager.instance.currentSlot = -1;
     }
 }
