@@ -40,4 +40,14 @@ public class CanvasManager : MonoBehaviour
         ShelfCanvas.enabled = false;
         ZoomedCanvas.enabled = true;
     }
+
+    public void UngrownActivate()
+    {
+        UngrownCanvas.enabled = true;
+    }
+
+    public void UngrownDeactivate()
+    {
+        UngrownCanvas.enabled = false;
+    }
 }

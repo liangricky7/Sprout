@@ -55,6 +55,13 @@ public class SlotButtons : MonoBehaviour
             targetPosition = slots[slot.index].transform.position;
         }
 
+        //pulls up questlist
+        if (slots[slot.index].plant != null && slots[slot.index].plant.growthStage != 2)
+        {
+            Debug.Log("test");
+            CanvasManager.instance.UngrownActivate();
+        }
+
         float timeElapsed = 0;
         while (timeElapsed < transitionDuration)
         {
@@ -64,6 +71,7 @@ public class SlotButtons : MonoBehaviour
             yield return null;
         }
         CanvasManager.instance.ZoomedActivate();
+
     }
 
     public void ZoomOut()
@@ -87,12 +95,12 @@ public class SlotButtons : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+        CanvasManager.instance.UngrownDeactivate();
         ShelfManager.instance.currentSlot = -1;
     }
 
     public void AddPlant()
     {
-        Debug.Log("test");
         if (PlantManager.instance.inPlantMode)
         {
             GameObject plant = Instantiate(PlantManager.instance.stagedPlantPrefab, new Vector3(0, 0, 0), Quaternion.identity);

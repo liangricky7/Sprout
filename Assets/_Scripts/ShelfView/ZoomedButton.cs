@@ -86,15 +86,18 @@ public class ZoomedButton : MonoBehaviour
                 if (slots[currentSlotIndex - 1].plant.growthStage == 2) //if the plant in slot is fully grown, display without questlist
                 {
                     targetPosition = slots[currentSlotIndex - 1].transform.position;
+                    CanvasManager.instance.UngrownDeactivate();
                 }
                 else //otherwise, move camera target to give space to show questlist
                 {
                     targetPosition = slots[currentSlotIndex - 1].transform.position - new Vector3(0, 1, 0);
+                    CanvasManager.instance.UngrownActivate();
                 }
             }
             else //if there is no plant in slot, display without questlist
             {
                 targetPosition = slots[currentSlotIndex - 1].transform.position;
+                CanvasManager.instance.UngrownDeactivate();
             }
 
 
@@ -141,15 +144,18 @@ public class ZoomedButton : MonoBehaviour
                 if (slots[currentSlotIndex + 1].plant.growthStage == 2) //if the plant in slot is fully grown, display without questlist
                 {
                     targetPosition = slots[currentSlotIndex + 1].transform.position;
+                    CanvasManager.instance.UngrownDeactivate();
                 }
                 else //otherwise, move camera target to give space to show questlist
                 {
                     targetPosition = slots[currentSlotIndex + 1].transform.position - new Vector3(0, 1, 0);
+                    CanvasManager.instance.UngrownActivate();
                 }
             }
             else //if there is no plant in slot, display without questlist
             {
                 targetPosition = slots[currentSlotIndex + 1].transform.position;
+                CanvasManager.instance.UngrownDeactivate();
             }
 
             //switch slots
