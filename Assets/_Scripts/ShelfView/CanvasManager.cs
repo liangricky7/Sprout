@@ -7,6 +7,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private Canvas ShelfCanvas;
     [SerializeField] private Canvas ZoomedCanvas;
     [SerializeField] private Canvas UngrownCanvas;
+    [SerializeField] public GameObject AddPlantPanel;
 
     public static CanvasManager instance;
 

@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlantManager : MonoBehaviour
 {
     public GameObject[] plantPrefabs;
+    public Sprite[] seedPackets;
+    public Sprite[] titles;
+
     public Plant selectedPlant;
     public GameObject stagedPlantPrefab;
     public bool inPlantMode;

@@ -10,7 +10,7 @@ public class SlotButtonUI : MonoBehaviour
 
     private void Update()
     {
-        if (PlantManager.instance.inPlantMode)
+        if (PlantManager.instance.stagedPlantPrefab != null && PlantManager.instance.inPlantMode)
         {
             if (slot.plant != null)
             {
